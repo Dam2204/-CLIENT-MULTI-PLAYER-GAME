@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class NetworkManager : MonoBehaviour
 {
     public static NetworkManager instance;
@@ -296,9 +297,8 @@ public class NetworkManager : MonoBehaviour
             Debug.LogError($"Error HandleLocationPacket: {e.Message}");
         }
     }
-}
 
-async void HandlePingPacket(byte[] data) {
+    async void HandlePingPacket(byte[] data) {
     // 타임스탬프
     // 바로 돌려줄 예정
     
@@ -314,4 +314,7 @@ async void HandlePingPacket(byte[] data) {
         
         // 패킷 전송
     stream.Write(packet, 0, packet.Length);
+    }
 }
+
+
